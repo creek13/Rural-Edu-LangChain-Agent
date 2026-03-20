@@ -24,41 +24,45 @@
 
         .container {
             padding: 12px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .intro {
             background: white;
-            padding: 12px;
+            padding: 20px;
             border-radius: 10px;
             margin-bottom: 12px;
             line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .tips {
             font-size: 14px;
             color: #666;
-            margin-top: 8px;
-        }
-
-        .chat-container {
-            width: 100%;
-            height: 75vh;
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            margin-top: 12px;
+            border-top: 1px dashed #eee;
+            padding-top: 10px;
         }
 
         footer {
             text-align: center;
             font-size: 12px;
             color: #999;
-            margin-top: 10px;
+            margin-top: 30px;
+        }
+
+        /* Dify 聊天窗口样式自定义 */
+        #dify-chatbot-bubble-button {
+            background-color: #2f80ed !important; /* 统一使用你 Header 的蓝色 */
+            bottom: 20px !important;
+            right: 20px !important;
+        }
+
+        #dify-chatbot-bubble-window {
+            width: 24rem !important;
+            height: 40rem !important;
+            max-width: 90vw; /* 适配手机屏幕 */
         }
     </style>
 </head>
@@ -72,24 +76,34 @@
 <div class="container">
 
     <div class="intro">
-        👋 欢迎使用学习助手
+        <strong>👋 欢迎使用学习助手</strong>
+        <p>我是你的 AI 学习伙伴。不论是数学难题还是课文理解，我都会引导你一步步思考，而不是直接告诉你答案。</p>
 
         <div class="tips">
-            👉 遇到不会的题，可以直接问<br>
-            👉 尝试回答AI的问题，会更容易学会<br>
-            👉 不要只看答案，试着自己做一遍
+            👉 <strong>遇到不会的题</strong>，点击右下角蓝色气泡，拍照或输入题目即可。<br>
+            👉 <strong>启发式学习</strong>：尝试回答 AI 的反问，会让你掌握得更牢固。<br>
+            👉 <strong>公式支持</strong>：现在数学公式可以完美显示啦。
         </div>
     </div>
 
-    <div class="chat-container">
-        <iframe src="https://udify.app/chatbot/eK0GTxcReGIleskx"></iframe>
-    </div>
-
     <footer>
-        🌱 希望它能帮你学会一题
+        🌱 希望它能帮你学会一题 · 2026 支教项目
     </footer>
 
 </div>
 
+<script>
+ window.difyChatbotConfig = {
+  token: 'eK0GTxcReGIleskx',
+  inputs: {},
+  systemVariables: {},
+  userVariables: {},
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="eK0GTxcReGIleskx"
+ defer>
+</script>
 </body>
 </html>
